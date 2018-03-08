@@ -32,10 +32,18 @@ rm(path.join(config.build.assetsRoot, config.build.assetsSubDirectory), err => {
       process.exit(1)
     }
 
-    console.log(chalk.cyan('  Build complete.\n'))
+    console.log(chalk.cyan('  * Build complete.\n'))
+
     console.log(chalk.yellow(
+      '  * Insure MongDB server is up: \'mongod.exe --dbpath .\mongodb\data\' \n' +
+      '  * Then can do a \'npm start\' \n' +
+      '  * Afterwards, use browser on \'http://localhost:3000\' or \'http://localhost:3000/book\' \n'
+    ))
+    
+    console.log(chalk.green(
       '  Tip: built files are meant to be served over an HTTP server.\n' +
       '  Opening index.html over file:// won\'t work.\n'
     ))
+    
   })
 })
